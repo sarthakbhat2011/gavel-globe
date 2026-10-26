@@ -1,0 +1,261 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+  --font-doc: var(--font-garamond);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-oxblood: var(--oxblood);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ————— "Morning Session" (light): parchment, deep diplomatic green, brass ————— */
+:root {
+  --radius: 0.5rem;
+  --background: #f2ecdb;
+  --foreground: #1f2a24;
+  --card: #faf6ea;
+  --card-foreground: #1f2a24;
+  --popover: #fffdf4;
+  --popover-foreground: #1f2a24;
+  --primary: #14352b;
+  --primary-foreground: #f2ebd8;
+  --secondary: #e6dcc1;
+  --secondary-foreground: #2c3a32;
+  --muted: #e9e1ca;
+  --muted-foreground: #6e6552;
+  --accent: #c9a227;
+  --accent-foreground: #231f10;
+  --destructive: #8c2f39;
+  --border: #d6cbaa;
+  --input: #c7ba97;
+  --ring: #a8811f;
+  --chart-1: #14352b;
+  --chart-2: #c9a227;
+  --chart-3: #8c2f39;
+  --chart-4: #5a7d64;
+  --chart-5: #b5803a;
+  --sidebar: #faf6ea;
+  --sidebar-foreground: #1f2a24;
+  --sidebar-primary: #14352b;
+  --sidebar-primary-foreground: #f2ebd8;
+  --sidebar-accent: #e6dcc1;
+  --sidebar-accent-foreground: #2c3a32;
+  --sidebar-border: #d6cbaa;
+  --sidebar-ring: #a8811f;
+  --gold: #a8811f;
+  --gold-bright: #c9a227;
+  --oxblood: #8c2f39;
+  --paper: #fbf7ec;
+  --ink: #26221a;
+}
+
+/* ————— "The Afterparty" (dark): midnight green, lamplight gold ————— */
+.dark {
+  --background: #0d1613;
+  --foreground: #ece5d1;
+  --card: #131f19;
+  --card-foreground: #ece5d1;
+  --popover: #16251d;
+  --popover-foreground: #ece5d1;
+  --primary: #d9b84a;
+  --primary-foreground: #101b15;
+  --secondary: #1c2c23;
+  --secondary-foreground: #ded5bd;
+  --muted: #182620;
+  --muted-foreground: #9c947e;
+  --accent: #c9a227;
+  --accent-foreground: #101b15;
+  --destructive: #d06570;
+  --border: #26382e;
+  --input: #31463a;
+  --ring: #c9a227;
+  --chart-1: #d9b84a;
+  --chart-2: #7fa88c;
+  --chart-3: #d06570;
+  --chart-4: #c9a227;
+  --chart-5: #8f9d6e;
+  --sidebar: #131f19;
+  --sidebar-foreground: #ece5d1;
+  --sidebar-primary: #d9b84a;
+  --sidebar-primary-foreground: #101b15;
+  --sidebar-accent: #1c2c23;
+  --sidebar-accent-foreground: #ded5bd;
+  --sidebar-border: #26382e;
+  --sidebar-ring: #c9a227;
+  --gold: #c9a227;
+  --gold-bright: #e3c766;
+  --oxblood: #d06570;
+  --paper: #fbf7ec;
+  --ink: #26221a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, color-mix(in srgb, var(--foreground) 3%, transparent) 28px, transparent 29px),
+      radial-gradient(ellipse at top, color-mix(in srgb, var(--gold) 6%, transparent), transparent 60%);
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--gold) 35%, transparent);
+  }
+}
+
+/* ————— Formal-hilarious utilities ————— */
+
+.font-display {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+.font-doc {
+  font-family: var(--font-garamond), Georgia, "Times New Roman", serif;
+}
+
+/* A real UN-document sheet of paper. Stays paper-coloured in both themes. */
+.paper-sheet {
+  background-color: var(--paper);
+  color: var(--ink);
+  background-image:
+    radial-gradient(ellipse at top right, rgba(168, 129, 31, 0.05), transparent 55%),
+    repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(38, 34, 26, 0.045) 28px, transparent 29px);
+  border: 1px solid #d8c9a3;
+  box-shadow:
+    0 1px 2px rgba(38, 34, 26, 0.12),
+    0 8px 24px -8px rgba(38, 34, 26, 0.25);
+}
+
+/* Double-rule diploma border, for cards that deserve gravity */
+.diploma {
+  border: 1.5px solid color-mix(in srgb, var(--gold) 75%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
+  outline-offset: 3px;
+}
+
+.gold-rule {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in srgb, var(--gold) 45%, transparent) 20%,
+    var(--gold) 50%,
+    color-mix(in srgb, var(--gold) 45%, transparent) 80%,
+    transparent
+  );
+}
+
+.gold-rule-left {
+  height: 2px;
+  background: linear-gradient(to right, var(--gold), color-mix(in srgb, var(--gold) 20%, transparent));
+}
+
+/* Rubber stamp — "PASSED", "TABLED", etc. */
+.stamp {
+  font-family: var(--font-playfair), Georgia, serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 2.5px solid currentColor;
+  border-radius: 4px;
+  padding: 0.15rem 0.6rem;
+  transform: rotate(-4deg);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.6' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='120' height='40' filter='url(%23n)' fill='white'/%3E%3C/svg%3E");
+  mask-size: cover;
+}
+
+@keyframes gavel-swing {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-14deg); }
+  45% { transform: rotate(8deg); }
+  65% { transform: rotate(-4deg); }
+  80% { transform: rotate(0deg); }
+}
+.gavel-hover:hover .gavel-head {
+  animation: gavel-swing 0.9s ease-in-out;
+  transform-origin: top center;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee-scroll 36s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Elegant scrollbars for long lists */
+.scroll-fancy {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--gold) 55%, transparent) transparent;
+}
+.scroll-fancy::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-fancy::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-fancy::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--gold) 45%, transparent);
+  border-radius: 999px;
+}
+.scroll-fancy::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Operative clauses are underlined in real UN documents — keep the tradition */
+.clause-operative {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}

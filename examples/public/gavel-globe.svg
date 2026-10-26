@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#14352b"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="23.5" fill="none" stroke="#c9a227" stroke-width="0.75" opacity="0.6"/>
+  <!-- globe -->
+  <circle cx="27" cy="36" r="12" fill="none" stroke="#f2ebd8" stroke-width="1.6"/>
+  <ellipse cx="27" cy="36" rx="5" ry="12" fill="none" stroke="#f2ebd8" stroke-width="1" opacity="0.75"/>
+  <path d="M15.5 33 h23 M15.5 39 h23" fill="none" stroke="#f2ebd8" stroke-width="1" opacity="0.75"/>
+  <!-- gavel -->
+  <g transform="rotate(38 40 24)">
+    <rect x="36.5" y="12" width="7" height="16" rx="1.5" fill="#c9a227"/>
+    <rect x="33.5" y="26" width="13" height="4" rx="1.5" fill="#e3c766"/>
+    <rect x="38.8" y="29" width="2.4" height="14" rx="1.2" fill="#c9a227"/>
+  </g>
+</svg>
